@@ -1,0 +1,137 @@
+<html lang="ru"><head>
+  <title>Мониторинг заказа</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1088ae">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+  <script type="text/javascript" src="../js/vrp_commons.js"></script>
+  <script type="text/javascript" src="../js/vrp_cs.js?10"></script>
+
+  <link rel="stylesheet" href="../js/leaflet/leaflet.css">
+  <script src="../js/leaflet/leaflet.js"></script>
+  <style>
+	  html, body {
+		  height: 100%;
+	  }
+
+	  .leaflet-control-zoom {
+		  display: none;
+	  }
+    #myMap {
+      width: 100%;
+      height: 100%;
+    }
+    body {
+      margin: 0;
+    }
+    .my-custom-counters {
+	    width: 100%;
+	    box-sizing: border-box;
+      font-size: 19px;
+      text-align: center;
+      color: black;
+    }
+
+	  .my-custom-counters-inner {
+		  display: inline-block;
+		  padding-bottom: 10px;
+		  margin-bottom: -10px;
+		  width: 100%;
+		  max-width: 600px;
+		  background: white;
+		  border-radius: 8px;
+		  box-shadow: 0 2px 20px 0 rgba(0,0,0,0.1);}
+	  
+
+    .my-custom-counters-error {
+	    width: 100%;
+	    box-sizing: border-box;
+      text-align: center;
+	    background: white;
+	    border-radius: 8px 8px 0 0;
+	    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.1);}
+    
+
+    .my-custom-counters-error p {
+	    font-size: 19px;
+	    color: red;
+    }
+
+    .leaflet-control-attribution {
+	    display: none;
+    }
+
+    .leaflet-top,
+    .leaflet-left {
+	    width: 100%;
+    }
+
+    .tel {
+	    position: absolute;
+	    right: 10px;
+	    bottom: -25px;
+	    width: 50px;
+    }
+
+    p {
+	    font-family: 'Roboto', sans-serif;
+	    font-size: 14px;
+	    text-align: center;
+	    padding: 15px;
+	    margin: 0;
+    }
+
+	  .status-header {
+		  font-weight: bold;
+		  font-size: 19px;
+	  }
+
+	  .status-desc {
+		  padding-top: 0;
+	  }
+
+	  .leaflet-top .leaflet-control,
+	  .leaflet-left .leaflet-control {
+		  margin: 0;
+	  }
+
+	  p .phone {
+		  width: 90%;
+		  display: inline-block;
+		  background: #1088ae;
+		  border-radius: 8px;
+		  padding: 8px 15px;
+		  color: white;
+		  text-decoration: none;
+		  font-size: 16px;
+		  max-width: 300px;
+	  }
+
+	  .driver-wrap {
+		  border-top: 1px solid #f0f0f0;
+		  color: #9b9b9b;
+	  }
+
+	  .logo {
+		  width: 100%;
+		  text-align: center;
+		  background: #1088ae;
+		  height: 40px;
+	  }
+
+	  .logo img {
+		  position: relative;
+		  top: 50%;
+		  transform: translateY(-50%);
+	  }
+  </style>
+	  <script type="text/javascript">
+    window.onload = function() {
+      beltranssat.vrp.ClientService({token: 'cb167b2d-ec01-4d6f-b06f-e2f4b1ce3008', mapDiv: window.myMap, mapService: 'google'}).startAutoRefresh();
+    }
+  </script>
+</head>
+<body style="">
+<div id="myMap" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, -213px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(480px, 194px, 0px) scale(0.5);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 19; transform: translate3d(480px, 194px, 0px) scale(1);"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37807&amp;y=21080&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(268px, 112px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37807&amp;y=21079&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(268px, -144px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37806&amp;y=21080&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(12px, 112px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37808&amp;y=21080&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(524px, 112px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37807&amp;y=21081&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(268px, 368px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37806&amp;y=21079&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(12px, -144px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37808&amp;y=21079&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(524px, -144px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37806&amp;y=21081&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(12px, 368px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37808&amp;y=21081&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(524px, 368px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37805&amp;y=21080&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-244px, 112px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37809&amp;y=21080&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(780px, 112px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37805&amp;y=21079&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-244px, -144px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37809&amp;y=21079&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(780px, -144px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37805&amp;y=21081&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-244px, 368px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37809&amp;y=21081&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(780px, 368px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37807&amp;y=21078&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(268px, -400px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37808&amp;y=21078&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(524px, -400px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37807&amp;y=21082&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(268px, 624px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37808&amp;y=21082&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(524px, 624px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37806&amp;y=21078&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(12px, -400px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37809&amp;y=21078&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(780px, -400px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37810&amp;y=21080&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1036px, 112px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37806&amp;y=21082&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(12px, 624px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37809&amp;y=21082&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(780px, 624px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37810&amp;y=21079&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1036px, -144px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37810&amp;y=21081&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1036px, 368px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37805&amp;y=21078&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-244px, -400px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37810&amp;y=21078&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1036px, -400px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37805&amp;y=21082&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-244px, 624px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37810&amp;y=21082&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1036px, 624px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37804&amp;y=21080&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-500px, 112px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37811&amp;y=21080&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1292px, 112px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37804&amp;y=21079&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-500px, -144px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37811&amp;y=21079&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1292px, -144px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37804&amp;y=21081&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-500px, 368px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37811&amp;y=21081&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1292px, 368px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37804&amp;y=21078&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-500px, -400px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37811&amp;y=21078&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1292px, -400px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37804&amp;y=21082&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-500px, 624px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://mt0.google.com/vt/&amp;hl=ru&amp;x=37811&amp;y=21082&amp;z=16" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1292px, 624px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"><img src="https://nav.by/js/leaflet/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(960px, 428px, 0px);"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"><img src="https://nav.by/js/leaflet/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(960px, 428px, 0px); z-index: 428;"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(9.6788e+06px, 5.39664e+06px, 0px) scale(32768);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"><a href="https://beltranssat.by" target="_blank" class="bts-logo leaflet-control" aria-label="БелТрансСпутник"><img src="https://images.nav.by/img/cdn/system/telematics_report/logo.png" style="width: 86px; cursor: pointer;" alt="БелТрансСпутник"></a><div class="my-custom-counters-error leaflet-control"></div><div class="my-custom-counters leaflet-control"><div class="my-custom-counters-inner"><p class="status-header">Курьер в пути</p><p class="driver-wrap" style="padding-bottom: 8px;">Водитель: Дордаль Д.С.</p></div></div></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a></div></div></div></div>
+
+</body></html>

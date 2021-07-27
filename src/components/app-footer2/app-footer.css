@@ -1,0 +1,25 @@
+.main-footer {
+    
+display: inline-flex;
+
+  padding: 1px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(168, 168, 168);
+  color: rgb(44, 44, 44);
+
+ 
+
+}
+
+.textright {
+  text-align:right;
+  font-size: larger;
+  white-space: nowrap;
+}
+
+.iconky {
+  margin-top: 40px;
+  text-align:right;
+}

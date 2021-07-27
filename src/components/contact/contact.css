@@ -1,0 +1,33 @@
+.oval {
+    min-width: 80px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    background-color: #4398fa;
+    border: 1px solid #3e7bc1;
+    font: 15px/35px Arial;
+    height: max-content;
+    display: inline-block;
+	width: 30%;
+  }
+
+  .chy {
+	display: inline-block;
+	width: 30%;
+  float: left;
+}
+
+.row {
+    display: flex;
+  flex-direction: row;
+  
+  }
+
+  .dialog-tit {
+    align-items: flex-start;
+    color: #3e7bc1;
+  }
+
+  .dialog-text {
+    width: 400px;
+  }
